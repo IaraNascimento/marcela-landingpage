@@ -1,0 +1,14 @@
+{
+  "home": {
+    "name": "Principal",
+    "title": "Boas vindas!"
+  },
+  "calendar": {
+    "name": "Calendário",
+    "title": "Calendário"
+  },
+  "notfound": {
+    "name": "404",
+    "title": "Perdido..."
+  }
+}

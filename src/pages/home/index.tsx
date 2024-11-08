@@ -1,5 +1,5 @@
-import { useTranslation } from "react-i18next";
 import "./styles.scss";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
   const { t } = useTranslation();

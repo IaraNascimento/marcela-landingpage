@@ -1,11 +1,12 @@
-import Tranlation from "../translation/translation";
+import Navigation from "../navigation/navigation";
+import Translation from "../translation/translation";
 import "./styles.scss";
 
 export default function Header() {
   return (
-    <header>
-      <h1>header</h1>
-      <Tranlation />
-    </header>
+    <div className="header-wrap">
+      <Navigation />
+      <Translation />
+    </div>
   );
 }

@@ -1,0 +1,15 @@
+$header-height: 120px;
+$footer-height: 120px;
+
+header {
+  position: relative;
+  height: $header-height;
+  z-index: 1;
+}
+main {
+  position: relative;
+  min-height: calc(100vh - $header-height - $footer-height);
+}
+footer {
+  height: $footer-height;
+}

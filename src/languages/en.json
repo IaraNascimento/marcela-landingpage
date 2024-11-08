@@ -1,0 +1,14 @@
+{
+  "home": {
+    "name": "Home",
+    "title": "Welcome!"
+  },
+  "calendar": {
+    "name": "Calendar",
+    "title": "Calendar"
+  },
+  "notfound": {
+    "name": "404",
+    "title": "Lost..."
+  }
+}

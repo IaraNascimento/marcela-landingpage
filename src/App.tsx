@@ -1,32 +1,43 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./App";
+import "./App.scss";
+import { BrowserRouter, createBrowserRouter, Outlet } from "react-router-dom";
+import { useLoading } from "./components/loading/loading_context";
+import Loading from "./components/loading/loading";
 import Home from "./pages/home";
 import Calendar from "./pages/calendar";
 import NotFound from "./pages/404";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
+import { useEffect } from "react";
+import AppRoutes from "./routes/routes";
 
 export default function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/calendar",
-      element: <Calendar />,
-    },
-    {
-      path: "*",
-      element: <NotFound />,
-    },
-  ]);
+  const { isLoading, setLoading } = useLoading();
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
   return (
-    <main>
-      <Header />
-      <RouterProvider router={router} />
-      <Footer />
-    </main>
+    <BrowserRouter>
+      <>
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <>
+            <header>
+              <Header />
+            </header>
+
+            <main>
+              <AppRoutes />
+            </main>
+
+            <footer>
+              <Footer />
+            </footer>
+          </>
+        )}
+      </>
+    </BrowserRouter>
   );
 }
