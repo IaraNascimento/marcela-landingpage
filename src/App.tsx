@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App";
+import Home from "./pages/home";
+import Calendar from "./pages/calendar";
+import NotFound from "./pages/404";
+import Header from "./components/header/header";
+import Footer from "./components/footer/footer";
 
-function App() {
+export default function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/calendar",
+      element: <Calendar />,
+    },
+    {
+      path: "*",
+      element: <NotFound />,
+    },
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Header />
+      <RouterProvider router={router} />
+      <Footer />
+    </main>
   );
 }
-
-export default App;
